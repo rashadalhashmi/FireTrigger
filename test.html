@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+rashadfdljfdljflkj 
+<body>
+
+
+    <script>
+
+
+        test();
+
+        function test() {
+            fetch("https://gb-ims-150-geneyx-analysis-uae-prod-r1-obs.obs.ae-ad-1.vb.g42cloud.com/reports/58554ad9-cc10-4d40-b53c-777da7aaef96/2300047175_0458866_F1329_2023-12-06_08_43_54 - PRE-IVF_PRE-CONCEPTION CARRIER SCREENING - DUO - 240122_0630.json.gz?AccessKeyId=RZVKBQX7B3A0C6QYIUZQ&Expires=1709026701&Signature=tWE9BZgCZbt%2F55GbXQJgp0UKGwg%3D")
+                .then(response => {
+                    // Check if the response is successful (status code 200)
+                    if (response.ok) {
+                        // Parse the JSON in the response
+                        console.log(response.json());
+                    } else {
+                        // If the response is not successful, throw an error
+                        throw new Error('Failed to fetch data');
+                    }
+                })
+                .then(data => {
+                    // Handle the data returned by the API
+                    console.log('Data received:', data);
+                    // You can do more processing here
+                })
+                .catch(error => {
+                    // Handle any errors that occur during the fetch
+                    console.error('Error fetching data:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
