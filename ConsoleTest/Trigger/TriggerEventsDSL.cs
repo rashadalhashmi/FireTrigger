@@ -15,12 +15,12 @@ namespace ConsoleTest.Trigger
 
             var types = Assembly.GetExecutingAssembly().GetTypes();
 
-            Type interfaceType = types.First(t => t.Name == TypeName);
+            Type interfaceType = types.FirstOrDefault(t => t.Name == TypeName);
 
             if (interfaceType != null)
             {
                 // Filter the types that implement T interface
-                var implementingClasses = types.Where(t => interfaceType.IsAssignableFrom(t) && t.IsClass);
+                var implementingClasses = types.Where(type => interfaceType.IsAssignableFrom(type) && type.IsClass);
 
                 if (implementingClasses != null)
                 {
