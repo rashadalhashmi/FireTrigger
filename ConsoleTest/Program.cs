@@ -30,49 +30,7 @@ namespace ConsoleTest
                 Console.WriteLine(ex.ToString());
 
             }
-
-
-        }
-
-
-    }
-
-
-    public abstract class baseclass 
-    {
-        public EventParamsModelBase CreateModel<T>(string eventParameters) where T : EventParamsModelBase
-        {
-            var tyee = typeof(T);
-
-            T afterResult = JsonConvert.DeserializeObject<T>(eventParameters);
-            return afterResult;
-
-        }
-        public void PrintType<T>() where T :baseclass 
-        {
-            Console.WriteLine((typeof(T)));
-
-            return  ;
         }
 
     }
-
-    public class childclass :baseclass
-    {
-       
-
-    }
-
-    public class EventParamsModelBase
-    {
-        public string Body { get; set; }
-
-        public string Subject { get; set; }
-
-    }
-
-    public class AfterReservationParamsModel : EventParamsModelBase
-    {
-    }
-
 }
