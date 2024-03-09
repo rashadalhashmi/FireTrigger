@@ -21,8 +21,9 @@ namespace ConsoleTest
             try
             {
 
-                TriggerEventsDSL.FireTriggerEvents<IAfterRegistrationTrigger, RegistrationParameters>(new RegistrationParameters());
-                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistration,UpdateRegistrationParameters>(new UpdateRegistrationParameters());
+                TriggerEventsDSL.FireTriggerEvents<IAfterRegistrationTrigger,RegistrationParameters>(new RegistrationParameters());
+
+                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistrationTrigger, UpdateRegistrationParameters>(new UpdateRegistrationParameters());
 
 
                 Console.ReadLine();

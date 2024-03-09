@@ -6,9 +6,7 @@
     }
 
 
-    public interface IAfterUpdatRegistration : ITrigger<UpdateRegistrationParameters> { }
-
- 
+    public interface IAfterUpdatRegistrationTrigger : ITrigger<UpdateRegistrationParameters> { }
     public interface IAfterRegistrationTrigger : ITrigger<RegistrationParameters> { }
 
     public class UpdateRegistrationParameters
