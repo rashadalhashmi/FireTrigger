@@ -10,16 +10,15 @@ namespace ConsoleTest.Trigger
 
         public static void FireTriggerEvents<TTrigger,TParam>(TParam data) where TTrigger : ITrigger<TParam>
         {
-            string TypeName = typeof(TTrigger).Name;
 
-            var types = Assembly.GetExecutingAssembly().GetTypes();
+            IEnumerable<Type> types = Assembly.GetExecutingAssembly().GetTypes().Where(type=>type.IsClass);
 
-            Type interfaceType = types.FirstOrDefault(t => t.Name == TypeName);
+            Type interfaceType = typeof(TTrigger); 
 
             if (interfaceType != null)
             {
                 // Filter the types that implement T interface
-                var implementingClasses = types.Where(type => interfaceType.IsAssignableFrom(type) && type.IsClass);
+                var implementingClasses = types.Where(type => interfaceType.IsAssignableFrom(type));
 
                 if (implementingClasses != null)
                 {
