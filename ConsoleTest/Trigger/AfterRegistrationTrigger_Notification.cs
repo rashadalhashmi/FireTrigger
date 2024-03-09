@@ -8,7 +8,7 @@ namespace ConsoleTest.Trigger
 {
     public class AfterRegistrationTrigger_Notification : IAfterRegistrationTrigger
     {
-        public void DoEvent(object obj)
+        public void DoEvent(RegistrationParameters obj)
         {
             Console.WriteLine("after Registration");
         }

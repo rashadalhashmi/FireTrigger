@@ -8,7 +8,7 @@ namespace ConsoleTest.Trigger
 {
     public class AfterUpdatRegistrationTrigger_Notifications : IAfterUpdatRegistration
     {
-        public void DoEvent(object obj)
+        public void DoEvent(UpdateRegistrationParameters obj)
         {
             Console.WriteLine("AfterUpdatRegistrationTrigger_Notifications");
         }

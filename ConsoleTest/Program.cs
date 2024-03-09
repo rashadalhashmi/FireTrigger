@@ -20,8 +20,10 @@ namespace ConsoleTest
         {
             try
             {
-                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistration>( new object());
-                TriggerEventsDSL.FireTriggerEvents<IAfterRegistrationTrigger>(new object());
+
+                TriggerEventsDSL.FireTriggerEvents<IAfterRegistrationTrigger, RegistrationParameters>(new RegistrationParameters());
+                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistration,UpdateRegistrationParameters>(new UpdateRegistrationParameters());
+
 
                 Console.ReadLine();
             }

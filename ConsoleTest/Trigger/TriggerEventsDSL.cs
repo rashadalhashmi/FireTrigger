@@ -8,10 +8,9 @@ namespace ConsoleTest.Trigger
     public class TriggerEventsDSL
     {
 
-
-        public static void FireTriggerEvents<T>(object data) where T : ITrigger
+        public static void FireTriggerEvents<TTrigger,TParam>(TParam data) where TTrigger : ITrigger<TParam>
         {
-            string TypeName = typeof(T).Name;
+            string TypeName = typeof(TTrigger).Name;
 
             var types = Assembly.GetExecutingAssembly().GetTypes();
 
@@ -27,7 +26,7 @@ namespace ConsoleTest.Trigger
                     // Fire Trigger in the implementing classes
                     foreach (var implementingClass in implementingClasses)
                     {
-                        var instance = (ITrigger)Activator.CreateInstance(implementingClass);
+                        var instance = (ITrigger<TParam>)Activator.CreateInstance(implementingClass);
 
                         instance.DoEvent(data);
                     }
