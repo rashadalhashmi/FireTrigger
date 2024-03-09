@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleTest.Trigger
 {
-    public class AfterUpdatRegistrationTrigger_Notifications : IAfterUpdatRegistration
+    public class AfterUpdatRegistrationTrigger_Notifications : IAfterUpdatRegistrationTrigger
     {
         public void DoEvent(UpdateRegistrationParameters obj)
         {
