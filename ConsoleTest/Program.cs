@@ -23,7 +23,7 @@ namespace ConsoleTest
 
                 TriggerEventsDSL.FireTriggerEvents<IAfterRegistrationTrigger,RegistrationParameters>(new RegistrationParameters());
 
-                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistrationTrigger, UpdateRegistrationParameters>(new UpdateRegistrationParameters());
+                TriggerEventsDSL.FireTriggerEvents<IAfterUpdatRegistrationTrigger,UpdateRegistrationParameters>(new UpdateRegistrationParameters());
 
 
                 Console.ReadLine();
